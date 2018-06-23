@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace Flatten
 
         static void CleanUp(DirectoryInfo root)
         {
-            var removedExtensions = ".txt,.nfo,.jpg,.png";
+            var removedExtensions = ConfigurationManager.AppSettings["FileExtensionsToBeRemoved"]?.Split(',');
 
             foreach (FileInfo fi in GetFiles(root)
                 .Where(x => removedExtensions.Contains(x.Extension.ToLower())))
