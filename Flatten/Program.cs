@@ -21,7 +21,7 @@ namespace Flatten
             Console.WriteLine("fin.");
             Console.ResetColor();
 
-            Console.ReadKey();
+        //    Console.ReadKey();
         }
 
 
@@ -32,7 +32,7 @@ namespace Flatten
             foreach (FileInfo fi in GetFiles(root)
                 .Where(x => removedExtensions.Contains(x.Extension.ToLower())))
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"{fi.FullName}");
                 Console.ResetColor();
 
@@ -42,9 +42,10 @@ namespace Flatten
                 }
                 catch (Exception e)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(e.Message);
                     Console.ResetColor();
+                    Console.ReadKey();
                 }
             }
         }
@@ -64,9 +65,10 @@ namespace Flatten
                     }
                     catch (Exception e)
                     {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(e.Message);
                         Console.ResetColor();
+                        Console.ReadKey();
                     }
                 }
 
@@ -77,7 +79,7 @@ namespace Flatten
 
             if (root.FullName != destination.FullName)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine(root.FullName);
                 Console.ResetColor();
 
@@ -87,9 +89,10 @@ namespace Flatten
                 }
                 catch (Exception e)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(e.Message);
                     Console.ResetColor();
+                    Console.ReadKey();
                 }
             }
         }
@@ -104,15 +107,17 @@ namespace Flatten
             }
             catch (UnauthorizedAccessException e)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e.Message);
                 Console.ResetColor();
+                Console.ReadKey();
             }
             catch (DirectoryNotFoundException e)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e.Message);
                 Console.ResetColor();
+                Console.ReadKey();
             }
 
             return files;
