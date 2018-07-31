@@ -20,8 +20,6 @@ namespace Flatten
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("fin.");
             Console.ResetColor();
-
-        //    Console.ReadKey();
         }
 
 
@@ -45,7 +43,6 @@ namespace Flatten
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(e.Message);
                     Console.ResetColor();
-                    Console.ReadKey();
                 }
             }
         }
@@ -67,8 +64,7 @@ namespace Flatten
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(e.Message);
-                        Console.ResetColor();
-                        Console.ReadKey();
+                        Console.ResetColor();                        
                     }
                 }
 
@@ -91,8 +87,7 @@ namespace Flatten
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(e.Message);
-                    Console.ResetColor();
-                    Console.ReadKey();
+                    Console.ResetColor();                  
                 }
             }
         }
@@ -109,15 +104,13 @@ namespace Flatten
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e.Message);
-                Console.ResetColor();
-                Console.ReadKey();
+                Console.ResetColor();               
             }
             catch (DirectoryNotFoundException e)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e.Message);
-                Console.ResetColor();
-                Console.ReadKey();
+                Console.ResetColor();              
             }
 
             return files;
