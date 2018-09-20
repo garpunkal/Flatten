@@ -58,13 +58,16 @@ namespace Flatten
 
                     try
                     {
+                        if (File.Exists(destination.FullName + "\\" + fi.Name))
+                            File.Delete(destination.FullName + "\\" + fi.Name);
+
                         File.Move(fi.FullName, destination.FullName + "\\" + fi.Name);
                     }
                     catch (Exception e)
                     {
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         Console.WriteLine(e.Message);
-                        Console.ResetColor();                        
+                        Console.ResetColor();
                     }
                 }
 
@@ -87,7 +90,7 @@ namespace Flatten
                 {
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine(e.Message);
-                    Console.ResetColor();                  
+                    Console.ResetColor();
                 }
             }
         }
@@ -104,13 +107,13 @@ namespace Flatten
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e.Message);
-                Console.ResetColor();               
+                Console.ResetColor();
             }
             catch (DirectoryNotFoundException e)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine(e.Message);
-                Console.ResetColor();              
+                Console.ResetColor();
             }
 
             return files;
