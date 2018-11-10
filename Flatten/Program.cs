@@ -35,7 +35,8 @@ namespace Flatten
                 Console.ResetColor();
 
                 try
-                {
+                { 
+                    //test
                     File.Delete(fi.FullName);
                 }
                 catch (Exception e)
